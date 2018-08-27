@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f9198881-e156-4074-8225-9399dde07095" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.js" afterPath="$PROJECT_DIR$/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logfile.log" afterPath="$PROJECT_DIR$/logfile.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uncaughtExceptions.log" afterPath="$PROJECT_DIR$/uncaughtExceptions.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -277,12 +272,12 @@
       <workItem from="1534744395670" duration="991000" />
       <workItem from="1534840328205" duration="829000" />
       <workItem from="1534848925299" duration="203000" />
-      <workItem from="1535379598191" duration="709000" />
+      <workItem from="1535379598191" duration="1300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72240000" />
+    <option name="totallyTimeSpent" value="72831000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="952" y="0" width="976" height="1038" extended-state="0" />
