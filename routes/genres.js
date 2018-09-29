@@ -5,13 +5,23 @@ const {Genre, validateGenre} = require('../models/genre');
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
+const hbs = require('hbs');
+
 
 router.get('/', async (req, res) => {
-    const genres = await Genre.find().sort('name');
-    res.send(genres);
+    let genres = await Genre.find().sort('name');
+    let genresNames = genres.map(function (obj) {
+        return '\n'+obj.name;
+    });
+    res.render('genres.hbs', {
+            pageTitle: 'Genres',
+            genres: genresNames
+
+    });
 });
 
-router.post('/', tokenAuth, async (req, res) => {
+router.post('/', async (req, res) => {
+
     const { error } = validateGenre(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
@@ -49,5 +59,11 @@ router.get('/:id', validateObjectId, async (req, res) => {
 
     res.send(genre);
 });
+
+hbs.registerPartials(__dirname + '/views/partials');
+hbs.registerHelper('getCurrentYear', () => {
+    return new Date().getFullYear();
+});
+router.use(express.static('../public'));
 
 module.exports = router;

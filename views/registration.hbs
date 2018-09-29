@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Some Website</title>
+</head>
+<body>
+  {{> fbAuth}}
+  {{> googleAuth}}
+  {{> telegramAuth}}
+{{> header}}
+<p>Current users:{{users}}</p>
+<p>Регистрация</p>
+<form action="/register" method="post" name="registerForm">
+    <label>Имя</label></br>
+    <input type="text" name="name" /></br></br>
+    <label>Почта</label></br>
+    <input type="text" name="email" /></br></br>
+    <label>Пароль</label></br>
+    <input type="password" name="password" /></br></br>
+    <input type="submit" value="Отправить" />
+</form>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+        $("form").submit(function(e) {
+            e.preventDefault();
+            var registerForm = document.forms["registerForm"];
+            var name = registerForm.elements["name"].value;
+            var email = registerForm.elements["email"].value;
+            var password = registerForm.elements["password"].value;
+            $.ajax({
+                type: "POST",
+                url: "users",
+                data: JSON.stringify({name: name, email: email, password: password}),
+                dataType: "json",
+                contentType: "application/json",
+                success: function(data){
+                    console.log(data);
+                    },
+                });
+              });
+
+</script>
+{{> footer}}
+</body>
+</html>

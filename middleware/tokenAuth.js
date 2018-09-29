@@ -7,6 +7,7 @@ module.exports = function(req, res, next) {
 
     try{
         req.user = jwt.verify(token, config.get('jwtPrivateKey'));//проверяет токен из headers и приватный ключ И возвращает юзера
+
         next();//пропуск дальше
     } catch (e) {
     res.status(400).send('Invalid token.');

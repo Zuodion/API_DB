@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Some Website</title>
+</head>
+<body>
+{{> fbAuth}}
+{{> googleAuth}}
+{{> telegramAuth}}
+{{> header}}
+<p>List of genres: {{genres}}</p>
+<form action="/register" method="post" name="registerForm">
+    <label>Название жанра</label></br>
+    <input type="text" name="name" /></br></br>
+    <input type="submit" value="Отправить" />
+</form>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script>
+      $("form").submit(function(e) {
+            e.preventDefault();
+            var registerForm = document.forms["registerForm"];
+            var name = registerForm.elements["name"].value;
+            $.ajax({
+                type: "POST",
+                url: "genres",
+                data: JSON.stringify({name: name}),
+                dataType: "json",
+                contentType: "application/json",
+                success: function(data){
+                    console.log(data);
+                    },
+                });
+              });
+
+</script>
+{{> footer}}
+</body>
+</html>

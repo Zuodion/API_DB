@@ -23,6 +23,8 @@
     "express": "^4.16.2",
     "express-async-errors": "^3.0.0",
     "fawn": "^2.1.5",
+    "fs": "0.0.1-security",
+    "hbs": "^4.0.1",
     "helmet": "^3.13.0",
     "joi": "^13.6.0",
     "jsonwebtoken": "^8.3.0",

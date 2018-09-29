@@ -4,11 +4,20 @@ const express = require('express');
 const router = express.Router();
 const _ = require('lodash');
 const bcrypt = require('bcrypt');
+const hbs = require('hbs');
 
-router.get('/me', tokenAuth, async (req, res) => {//tokenAuth возращает юзера с таким токеном
-    let user = await User.findById(req.user).select('-password');//пароль не покажет
-    res.send(user)
-});
+router.get('/', async (req, res) => {
+  
+  let users = await User.find().sort('name');
+  let usersNames = users.map(function (obj) {
+      return '\n'+obj.name;
+  });
+
+  res.render('registration.hbs', {
+          pageTitle: 'Registration',
+          users: usersNames
+  });
+})
 
 router.post('/', async (req, res) => {
     let user = await User.findOne({ email: req.body.email });
@@ -22,6 +31,13 @@ router.post('/', async (req, res) => {
 
     const token = user.generateAuthToken();
     res.header('x-auth-token', token).send(_.pick(user, ['_id', 'name', 'email', 'isAdmin']));//при регистрации юзера создается токен в headers
+});
+
+
+
+router.get('/me', tokenAuth, async (req, res) => {//tokenAuth возращает юзера с таким токеном
+    let user = await User.findById(req.user).select('-password');//пароль не покажет
+    res.send(user)
 });
 
 module.exports = router;

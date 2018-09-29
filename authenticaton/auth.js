@@ -3,6 +3,15 @@ const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
 const Joi = require('joi');
+const hbs = require('hbs');
+
+router.get('/', async (req, res) => {
+    res.render('auth.hbs', {
+            pageTitle: 'Authenticaton',
+
+    });
+});
+
 
 router.post('/', async (req, res) => {
     const { error } = validate(req.body);
@@ -15,7 +24,8 @@ router.post('/', async (req, res) => {
     if (!validPassword) return res.status(400).send('Invalid email or password.');
 
     const token = user.generateAuthToken();
-    res.send(token);
+    res.header('x-auth-token', token).send(_.pick(user, ['_id', 'name', 'email', 'isAdmin']));
+
 });
 
 function validate(req) {
@@ -26,5 +36,6 @@ function validate(req) {
 
     return Joi.validate(req, schema);
 }
+
 
 module.exports = router;
