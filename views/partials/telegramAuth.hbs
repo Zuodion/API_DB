@@ -5,7 +5,7 @@
     alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
             $.ajax({
             type: "POST",
-            url: "genres",
+            url: "api/genres",
             data: JSON.stringify({name: user.first_name}),
             dataType: "json",
             contentType: "application/json",
