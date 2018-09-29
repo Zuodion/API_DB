@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    let genre = await Genre.findOne({ email: req.body.name });
+    let genre = await Genre.findOne({ name: req.body.name });
     if (genre) return res.status(400).send('You cannot add 2 identical genres');
 
     const { error } = validateGenre(req.body);
