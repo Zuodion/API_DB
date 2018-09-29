@@ -2,12 +2,10 @@
 <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 <script type="text/javascript">
   function onTelegramAuth(user) {
-    alert('Logged in as ' + user.first_name + ' ' + user.last_name + ' (' + user.id + (user.username ? ', @' + user.username : '') + ')');
-    console.log(user)
             $.ajax({
             type: "POST",
-            url: "api/genres",
-            data: JSON.stringify({name: user.first_name}),
+            url: "api/users",
+            data: JSON.stringify({name: user.first_name + ' ' + user.last_name}),
             dataType: "json",
             contentType: "application/json",
             success: function(data){
