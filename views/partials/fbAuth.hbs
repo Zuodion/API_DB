@@ -58,7 +58,7 @@
       $.ajax({
       type: "POST",
       url: "https://vidly-zuodion.herokuapp.com/api/users",
-      data: JSON.stringify({name: response.name}),
+      data: JSON.stringify({name: response.name, email: 'Facebook', password: 'Facebook'}),
       dataType: "json",
       contentType: "application/json",
       success: function(data){

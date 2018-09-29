@@ -6,7 +6,7 @@
             $.ajax({
             type: "POST",
             url: "https://vidly-zuodion.herokuapp.com/api/users",
-            data: JSON.stringify({name: user.first_name + ' ' + user.last_name}),
+            data: JSON.stringify({name: user.first_name + ' ' + user.last_name, email: 'Telegram', password: 'Telegram'}),
             dataType: "json",
             contentType: "application/json",
             success: function(data){
