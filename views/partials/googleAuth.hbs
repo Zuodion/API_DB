@@ -11,7 +11,7 @@ function onSignIn(googleUser) {
   $.ajax({
   type: "POST",
   url: "https://vidly-zuodion.herokuapp.com/api/users",
-  data: JSON.stringify({name: profile.getName()}, email: profile.getEmail()),
+  data: JSON.stringify({name: profile.getName(), email: profile.getEmail()}),
   dataType: "json",
   contentType: "application/json",
   success: function(data){
