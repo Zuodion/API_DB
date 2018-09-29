@@ -1,7 +1,5 @@
 <h1>
   <script>
-
-
     function statusChangeCallback(response) {
         console.log('statusChangeCallback');
         console.log('Authorization from facebook');
@@ -38,6 +36,7 @@
     //Здесь запускаются операции с FB при загрузуке страници
     FB.getLoginStatus(function(response) {
         console.log(`Facebook status: ${response.status}.`);
+        console.log(response)
 
     });
   };
