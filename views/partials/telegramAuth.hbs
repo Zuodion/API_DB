@@ -5,7 +5,7 @@
     console.log(user)
             $.ajax({
             type: "POST",
-            url: "https://vidly-zuodion.herokuapp.com/api/genres",
+            url: "https://vidly-zuodion.herokuapp.com/api/users",
             data: JSON.stringify({name: user.first_name + ' ' + user.last_name}),
             dataType: "json",
             contentType: "application/json",

@@ -55,6 +55,16 @@
     FB.api('/me', function(response) {
       console.log(response)
       console.log('Successful login for: ' + response.name + ' ' + response.id);
+      $.ajax({
+      type: "POST",
+      url: "https://vidly-zuodion.herokuapp.com/api/users",
+      data: JSON.stringify({name: response.name}),
+      dataType: "json",
+      contentType: "application/json",
+      success: function(data){
+          console.log(data);
+          },
+      });
     });
   }
 
