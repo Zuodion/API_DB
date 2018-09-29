@@ -60,10 +60,4 @@ router.get('/:id', validateObjectId, async (req, res) => {
     res.send(genre);
 });
 
-hbs.registerPartials(__dirname + '/views/partials');
-hbs.registerHelper('getCurrentYear', () => {
-    return new Date().getFullYear();
-});
-router.use(express.static('../public'));
-
 module.exports = router;
