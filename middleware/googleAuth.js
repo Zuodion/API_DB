@@ -4,7 +4,7 @@ const router = express.Router();
 const {OAuth2Client} = require('google-auth-library');
 const client = new OAuth2Client();
 
-module.exports = function(){
+router.post('/', async (req, res) => {
   async function verify() {
     const ticket = await client.verifyIdToken({
         idToken: token,
@@ -19,4 +19,6 @@ module.exports = function(){
   }
   verify().catch(console.error);
   next();
-}
+});
+
+module.exports = router;
