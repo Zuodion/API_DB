@@ -7,6 +7,7 @@
 function onSignIn(googleUser) {
   // console.log(googleUser)
   var profile = googleUser.getBasicProfile();
+  var id_token = googleUser.getAuthResponse().id_token;
   console.log(`Google status: connected.`);
   $.ajax({
   type: "POST",
