@@ -1,7 +1,7 @@
 const validateObjectId = require('../middleware/validateObjectId');
 const tokenAuth = require('../middleware/tokenAuth');
 const adminRights = require('../middleware/adminRights');
-const {Genre, validateGenre} = require('../models/genre');
+const  { Genre, validateGenre } = require('../models/genre');
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
