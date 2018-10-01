@@ -8,20 +8,21 @@ function onSignIn(googleUser) {
   console.log(googleUser)
   console.log(`Google status: connected.`);
   var profile = googleUser.getBasicProfile();
-  if (profile.getName() !== undefined) {
-    console.log(profile.getName());
-  } else {
-      $.ajax({
-      type: "POST",
-      url: "https://vidly-zuodion.herokuapp.com/api/users",
-      data: JSON.stringify({name: profile.getName(), email: profile.getEmail(), password: 'google'}),
-      dataType: "json",
-      contentType: "application/json",
-      success: function(data){
-          console.log(data);
-          }
-      })
-  }
+  console.log(profile)
+  // if (profile !== undefined) {
+  //   console.log(profile.getName());
+  // } else {
+  //     $.ajax({
+  //     type: "POST",
+  //     url: "https://vidly-zuodion.herokuapp.com/api/users",
+  //     data: JSON.stringify({name: profile.getName(), email: profile.getEmail(), password: 'google'}),
+  //     dataType: "json",
+  //     contentType: "application/json",
+  //     success: function(data){
+  //         console.log(data);
+  //         }
+  //     })
+  // }
 }
 </script>
 </h1>
