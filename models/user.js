@@ -27,8 +27,7 @@ let userSchema = new mongoose.Schema({
   });
 
 userSchema.methods.generateAuthToken = function () {
-    return token = jwt.sign({ _id: this._id, isAdmin: this.isAdmin }, config.get('jwtPrivateKey'));
-    //генерация токен для юзера с таким id, с добавлением приватного ключа
+    return token = jwt.sign({ _id: this._id, isAdmin: this.isAdmin }, config.get('jwtPrivateKey')); //генерация токен для юзера с таким id, с добавлением приватного ключа
   };
 
 let User = mongoose.model('User', userSchema);

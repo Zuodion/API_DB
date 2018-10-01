@@ -11,7 +11,7 @@ const hbs = require('hbs');
 router.get('/', async (req, res) => {
     let genres = await Genre.find().sort('name');
     let genresNames = genres.map(function (obj) {
-        return '\n'+obj.name;
+        return ('\n'+obj.name);
     });
     res.render('genres.hbs', {
             pageTitle: 'Genres',
