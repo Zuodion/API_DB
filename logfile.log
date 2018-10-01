@@ -1666,3 +1666,5 @@
 {"level":"info","message":"Connected to mongodb://localhost:27017/vidly...","timestamp":"2018-09-29T10:06:34.639Z"}
 {"level":"info","message":"Listening on port 3000...","timestamp":"2018-09-29T10:08:50.863Z"}
 {"level":"info","message":"Connected to mongodb://localhost:27017/vidly...","timestamp":"2018-09-29T10:08:50.883Z"}
+{"level":"info","message":"Listening on port 3000...","timestamp":"2018-10-01T07:24:47.768Z"}
+{"level":"info","message":"Connected to mongodb://heroku_3q6gpxbl:8bb7ikpmc5cgkrlsqnrnhbftar@ds133252.mlab.com:33252/heroku_3q6gpxbl...","timestamp":"2018-10-01T07:24:48.419Z"}
