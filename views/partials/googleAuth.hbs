@@ -7,7 +7,6 @@
 function onSignIn(googleUser) {
   console.log(googleUser)
   console.log(`Google status: connected.`);
-  if(!googleUser){
     var profile = googleUser.getBasicProfile();
     $.ajax({
     type: "POST",
@@ -19,7 +18,6 @@ function onSignIn(googleUser) {
         console.log(data);
         },
   });
-  }
 }
 </script>
 </h1>
