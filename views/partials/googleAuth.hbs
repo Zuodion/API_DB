@@ -8,8 +8,8 @@ function onSignIn(googleUser) {
   console.log(googleUser)
   console.log(`Google status: connected.`);
   var profile = googleUser.getBasicProfile();
-  if (profile.getName() !== undefined || null);{
-    console.log(profile.getName())
+  if (profile.getName() !== undefined || null) {
+    console.log(profile.getName());
   } eles {
       $.ajax({
       type: "POST",
@@ -19,8 +19,8 @@ function onSignIn(googleUser) {
       contentType: "application/json",
       success: function(data){
           console.log(data);
-          },
-      });
+          }
+      })
   }
 }
 </script>
