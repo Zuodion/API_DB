@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 const {OAuth2Client} = require('google-auth-library');
-const client = new OAuth2Client(CLIENT_ID);
+const client = new OAuth2Client();
 
 router.post('/', async (req, res, next) => {
   async function verify() {
