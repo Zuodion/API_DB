@@ -24,6 +24,7 @@
     "express-async-errors": "^3.0.0",
     "fawn": "^2.1.5",
     "fs": "0.0.1-security",
+    "google-auth-library": "^2.0.0",
     "hbs": "^4.0.1",
     "helmet": "^3.13.0",
     "joi": "^13.6.0",

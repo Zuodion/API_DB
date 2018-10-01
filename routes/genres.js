@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 const hbs = require('hbs');
+const googleAuth = require('../middleware/googleAuth');
+
 
 
 router.get('/', async (req, res) => {
@@ -20,7 +22,7 @@ router.get('/', async (req, res) => {
     });
 });
 
-router.post('/', async (req, res) => {
+router.post('/', googleAuth, async (req, res) => {
     let genre = await Genre.findOne({ name: req.body.name });
     if (genre) return res.status(400).send('You cannot add 2 identical genres');
 

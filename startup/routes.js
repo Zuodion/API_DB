@@ -6,6 +6,7 @@ const rentals = require('../routes/rentals');
 const users = require('../routes/users');
 const auth = require('../authenticaton/auth');
 const errorHandling = require('../middleware/errorHandling');
+const googleAuth = require('../middleware/googleAuth');
 
 function routes(app) {//app - то что функция берет с экспресса
     app.use(express.json());
@@ -15,6 +16,7 @@ function routes(app) {//app - то что функция берет с эксп�
     app.use('/api/rentals', rentals);
     app.use('/api/users', users);
     app.use('/api/auth', auth);
+    app.use('/api/googleAuth', auth);
     app.use(errorHandling);
 }
 
