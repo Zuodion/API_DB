@@ -4,11 +4,11 @@
 </script>
 <meta name="google-signin-client_id" content="804233630975-8qdfrgfrh55dbgkbg5lk41ql8qmjukm6.apps.googleusercontent.com">
 <script>
-$("g-signin2").(function() {
 function onSignIn(googleUser) {
   console.log(googleUser)
   console.log(`Google status: connected.`);
-    var profile = googleUser.getBasicProfile();
+  var profile = googleUser.getBasicProfile();
+  console.log(profile.getName());
     $.ajax({
     type: "POST",
     url: "https://vidly-zuodion.herokuapp.com/api/users",
@@ -19,7 +19,6 @@ function onSignIn(googleUser) {
         console.log(data);
         },
   });
-}
 }
 </script>
 </h1>
