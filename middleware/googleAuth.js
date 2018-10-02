@@ -2,15 +2,21 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
+const app = express();
+
 
 router.post('/', async (req, res) => {
 const token = req.body.id_token;
-if (token){
+  tokenInfo(token)
+});
+function tokenInfo(token){
   app.get(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${token}`, (res, res) => {
-    if res.status(200) console.log('GOOGLE OK');
+    if (res.status === 200) {
+      console.log('Google ok')
+    } else {
+      console.log('Google not ok')
+    }
   })
 }
-
-});
 
 module.exports = router;
