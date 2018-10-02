@@ -11,12 +11,12 @@ router.post('/', async (req, res) => {
   request(tokenInfo, function (error, response, body){
     if (response.statusCode === 200) {
         console.log('Google token OK');
+        res.send('Google ok')
     } else {
       res.status(400).send('Invalid Google token')
       return console.log('Invalid Google token');
     }
   });
-  res.send('Google ok')
 });
 
 
