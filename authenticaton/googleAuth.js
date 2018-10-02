@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
-const https = require('https');
 const request = require('request');
 
 
