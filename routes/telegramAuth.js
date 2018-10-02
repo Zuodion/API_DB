@@ -12,7 +12,7 @@ router.post('/', (req, res) => {
   let token = "631428444:AAGB1Ot057LQ-tu-EgQ2BREgXw9m3_wfiuU";
   let data = req.body;
   if(telegramCheckingAuthorization(data, token))   res.send('Data is from telegram!');
-  if(!telegramCheckingAuthorization(data, token))   res.send(data)('Data is NOT from telegram :(')
+  if(!telegramCheckingAuthorization(data, token))   res.send('Data is NOT from telegram :(')
 
 
 });
