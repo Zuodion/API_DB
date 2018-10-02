@@ -8,13 +8,12 @@ const https = require('https');
 
 
 router.post('/', async (req, res) => {
-const token = req.body.id_token;
+  const token = req.body.id_token;
+
+}
 https.get(`https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${token}`, (res) => {
-  console.log('HTTPS request statusCode:'+ res.statusCode);
-});
-
-
-});
+    console.log('HTTPS request statusCode:'+ res.statusCode);
+  }););
 
 
 module.exports = router;
