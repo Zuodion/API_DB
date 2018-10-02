@@ -4,7 +4,7 @@ const telegramCheckingAuthorization = require('telegram-checking-authorization')
 
 router.post('/', (req, res) => {
   let token = "631428444:AAGB1Ot057LQ-tu-EgQ2BREgXw9m3_wfiuU";
-  let data = (req.body);
+  let data = (req.id);
   console.log(data)
   // if(telegramCheckingAuthorization(data, token)) alert('Data is from telegram!');
   // if(!telegramCheckingAuthorization(data, token)) alert('Data is NOT from telegram :(')
