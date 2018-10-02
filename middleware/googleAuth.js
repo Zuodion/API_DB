@@ -6,6 +6,7 @@ const { OAuth2Client } = require('google-auth-library');
 const client = new OAuth2Client(CLIENT_ID);
 
 router.post('/', async (req, res) => {
+  CLIENT_ID = req.body;
   verify().catch(console.error);
   if(!error) console.log('OK GOOGLE')
 });
