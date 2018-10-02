@@ -3,13 +3,14 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 const { OAuth2Client } = require('google-auth-library');
-const client = new OAuth2Client(CLIENT_ID);
+
 
 router.post('/', async (req, res) => {
-  CLIENT_ID = req.body;
+const CLIENT_ID = req.body;
+const client = new OAuth2Client(CLIENT_ID);
   verify().catch(console.error);
   if(!error) console.log('OK GOOGLE')
-  
+
   async function verify() {
     const ticket = await client.verifyIdToken({
         idToken: token,
