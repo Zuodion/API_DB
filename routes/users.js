@@ -7,7 +7,7 @@ const bcrypt = require('bcrypt');
 const hbs = require('hbs');
 
 router.get('/', async (req, res) => {
-  
+
   let users = await User.find().sort('name');
   let usersNames = users.map(function (obj) {
       return '\n'+obj.name;
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     let user = await User.findOne({ email: req.body.email });
-    if (user) return res.status(400).send('User already registered');
+    if (user) return res.send('User already registered');
 
     user = new User (_.pick(req.body, ['name', 'email', 'password', 'isAdmin']));
 
