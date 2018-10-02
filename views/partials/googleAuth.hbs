@@ -5,7 +5,7 @@
 <meta name="google-signin-client_id" content="804233630975-8qdfrgfrh55dbgkbg5lk41ql8qmjukm6.apps.googleusercontent.com">
 <script>
 function onSignIn(googleUser) {
-  // console.log(googleUser)
+  console.log(googleUser)
   // var id_token = googleUser.getAuthResponse().id_token;
   // var xhr = new XMLHttpRequest();
   // xhr.open('POST', 'https://vidly-zuodion.herokuapp.com/api/googleAuth');
@@ -18,7 +18,6 @@ function onSignIn(googleUser) {
   var id_token = googleUser.getAuthResponse().id_token;
   var profile = googleUser.getBasicProfile();
 
-  console.log(id_token)
   $.ajax({
   type: "POST",
   url: "https://vidly-zuodion.herokuapp.com/api/googleAuth",
