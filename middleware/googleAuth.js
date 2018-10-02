@@ -9,15 +9,16 @@ router.post('/', async (req, res) => {
   CLIENT_ID = req.body;
   verify().catch(console.error);
   if(!error) console.log('OK GOOGLE')
+  
+  async function verify() {
+    const ticket = await client.verifyIdToken({
+        idToken: token,
+        audience: CLIENT_ID
+      });
+    const payload = ticket.getPayload();
+    const userid = payload['sub'];
+  };
+
+  module.exports = router;
+
 });
-
-async function verify() {
-  const ticket = await client.verifyIdToken({
-      idToken: token,
-      audience: CLIENT_ID
-    });
-  const payload = ticket.getPayload();
-  const userid = payload['sub'];
-};
-
-module.exports = router;
