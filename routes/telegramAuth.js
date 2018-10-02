@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   // let token = "631428444:AAGB1Ot057LQ-tu-EgQ2BREgXw9m3_wfiuU";
   console.log({"name":"Alex"});
+  res.send('lol')
   // if(telegramCheckingAuthorization(data, token)) alert('Data is from telegram!');
   // if(!telegramCheckingAuthorization(data, token)) alert('Data is NOT from telegram :(')
 
