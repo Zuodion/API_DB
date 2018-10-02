@@ -22,8 +22,8 @@ function onSignIn(googleUser) {
   type: "POST",
   url: "https://vidly-zuodion.herokuapp.com/api/googleAuth",
   data: JSON.stringify(id_token),
-  dataType: "text",
-  contentType: "application/x-www-form-urlencoded",
+  dataType: "json",
+  contentType: "application/json",
   success: function(data){
       console.log(data);
       },
