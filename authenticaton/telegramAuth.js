@@ -9,8 +9,8 @@ router.post('/', (req, res) => {
   let token = "631428444:AAGB1Ot057LQ-tu-EgQ2BREgXw9m3_wfiuU";
   let data = req.body;
   if(telegramCheckingAuthorization(data, token)){
-    res.send('Data is from telegram!')
-    console.log('Data is from telegram!')
+    res.send('Telegram auth OK')
+    console.log('Telegram auth OK')
   };
   if(!telegramCheckingAuthorization(data, token)){
     console.log('Ivalid telegram data')
