@@ -13,7 +13,8 @@ router.post('/', jsonParser, (req, res) => {
   let token = "631428444:AAGB1Ot057LQ-tu-EgQ2BREgXw9m3_wfiuU";
   if(!req.body) return res.sendStatus(400);
   console.log('lol' + req.body);
-  response.json(req.body.user)
+    console.log('lol' + req.body.id);
+  response.json(req.body.id)
   // if(telegramCheckingAuthorization(data, token)) alert('Data is from telegram!');
   // if(!telegramCheckingAuthorization(data, token)) alert('Data is NOT from telegram :(')
 
