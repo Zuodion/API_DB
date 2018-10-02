@@ -16,9 +16,8 @@ router.post('/', (req, res) => {
     console.log('Data is from telegram!')
   };
   if(!telegramCheckingAuthorization(data, token)){
-    return res.status(400).send('Ivalid telegram data')
     console.log('Ivalid telegram data')
+    return res.status(400).send('Ivalid telegram data')
   };
-  console.log('lol')
 });
 module.exports = router;

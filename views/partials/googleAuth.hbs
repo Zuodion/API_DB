@@ -8,14 +8,14 @@ function onSignIn(googleUser) {
   // console.log(googleUser)
   var profile = googleUser.getBasicProfile();
 
-  // var id_token = googleUser.getAuthResponse().id_token;
-  // var xhr = new XMLHttpRequest();
-  // xhr.open('POST', 'https://vidly-zuodion.herokuapp.com/api/googleAuth');
-  // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-  // xhr.onload = function() {
-  // console.log('Signed in as: ' + xhr.responseText);
-  // };
-  // xhr.send('idtoken=' + id_token);
+  var id_token = googleUser.getAuthResponse().id_token;
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', 'https://vidly-zuodion.herokuapp.com/api/googleAuth');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+  console.log('Signed in as: ' + xhr.responseText);
+  };
+  xhr.send('idtoken=' + id_token);
 
   console.log(`Google status: connected.`);
   $.ajax({
