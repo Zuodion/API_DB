@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 
 router.post('/', async (req, res) => {
 const token = req.body;
-console.log(token);
+res.send(token)
 });
 
 module.exports = router;
