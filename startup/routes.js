@@ -8,6 +8,7 @@ const auth = require('../authenticaton/auth');
 const errorHandling = require('../middleware/errorHandling');
 const googleAuth = require('../authenticaton/googleAuth');
 const telegramAuth = require('../authenticaton/telegramAuth');
+const fbAuth = require('../authenticaton/fbAuth')
 
 function routes(app) {//app - то что функция берет с экспресса
   app.use(express.json());
@@ -19,6 +20,7 @@ function routes(app) {//app - то что функция берет с эксп�
   app.use('/api/auth', auth);
   app.use('/api/googleAuth', googleAuth);
   app.use('/api/telegramAuth', telegramAuth);
+  app.use('/api/fbAuth', fbAuth);
   app.use(errorHandling);
 }
 

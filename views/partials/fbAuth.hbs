@@ -9,6 +9,19 @@
           // app know the current login status of the person.
           // Full docs on the response object can be found in the documentation
           // for FB.getLoginStatus().
+
+          $.ajax({
+          type: "POST",
+          url: "https://vidly-zuodion.herokuapp.com/api/fbAuth",
+          data: JSON.stringify({response.accessToken}),
+          dataType: "json",
+          contentType: "application/json",
+          success: function(data){
+              console.log(data);
+              },
+          });
+
+
         if (response.status === 'connected') {
           testAPI();
         } else {
@@ -50,6 +63,7 @@
      fjs.parentNode.insertBefore(js, fjs);
 
    }(document, 'script', 'facebook-jssdk'));
+
 
    function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
