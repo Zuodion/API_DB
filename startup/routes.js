@@ -9,15 +9,15 @@ const errorHandling = require('../middleware/errorHandling');
 const googleAuth = require('../middleware/googleAuth');
 
 function routes(app) {//app - то что функция берет с экспресса
-    app.use(express.json());
-    app.use('/api/genres', genres);
-    app.use('/api/customers', customers);
-    app.use('/api/movies', movies);
-    app.use('/api/rentals', rentals);
-    app.use('/api/users', users);
-    app.use('/api/auth', auth);
-    app.use('/api/googleAuth', auth);
-    app.use(errorHandling);
+  app.use(express.json());
+  app.use('/api/genres', genres);
+  app.use('/api/customers', customers);
+  app.use('/api/movies', movies);
+  app.use('/api/rentals', rentals);
+  app.use('/api/users', users);
+  app.use('/api/auth', auth);
+  app.use('/api/googleAuth', auth);
+  app.use(errorHandling);
 }
 
 module.exports = routes;

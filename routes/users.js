@@ -1,5 +1,5 @@
 const tokenAuth = require('../middleware/tokenAuth');
-const { User } = require('../models/user');
+const {User} = require('../models/user');
 const express = require('express');
 const router = express.Router();
 const _ = require('lodash');
@@ -7,23 +7,23 @@ const bcrypt = require('bcrypt');
 const hbs = require('hbs');
 
 router.get('/', async (req, res) => {
+  
+  let users = await User.find().sort('name');
+  let usersNames = users.map(function (obj) {
+      return '\n'+obj.name;
+  });
 
-      let users = await User.find().sort('name');
-      let usersNames = users.map(function (obj) {
-        return '\n' + obj.name;
-      });
-
-      res.render('registration.hbs', {
+  res.render('registration.hbs', {
           pageTitle: 'Registration',
-          users: usersNames,
-        });
-    });
+          users: usersNames
+  });
+})
 
 router.post('/', async (req, res) => {
     let user = await User.findOne({ email: req.body.email });
-    if (user) return res.send('User already registered');
+    if (user) return res.status(400).send('User already registered');
 
-    user = new User(_.pick(req.body, ['name', 'email', 'password', 'isAdmin']));
+    user = new User (_.pick(req.body, ['name', 'email', 'password', 'isAdmin']));
 
     let salt = await bcrypt.genSalt(10);//генерируется "замок"
     user.password = await bcrypt.hash(user.password, salt);//"замок" вешается на user.password
