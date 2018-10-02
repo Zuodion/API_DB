@@ -16,6 +16,7 @@ router.post('/', async (req, res) => {
       return console.log('Invalid Google token');
     }
   });
+  res.send('Google ok')
 });
 
 
