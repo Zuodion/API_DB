@@ -18,7 +18,7 @@ function routes(app) {//app - то что функция берет с эксп�
   app.use('/api/users', users);
   app.use('/api/auth', auth);
   app.use('/api/googleAuth', auth);
-  app.use('/telegramAuth', telegramAuth);
+  app.use('/api/telegramAuth', telegramAuth);
   app.use(errorHandling);
 }
 

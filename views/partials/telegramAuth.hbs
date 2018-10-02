@@ -4,7 +4,7 @@
     console.log(user)
             $.ajax({
             type: "POST",
-            url: "https://vidly-zuodion.herokuapp.com/telegramAuth",
+            url: "https://vidly-zuodion.herokuapp.com/api/telegramAuth",
             data: JSON.stringify({data: user}),
             dataType: "json",
             contentType: "application/json",
