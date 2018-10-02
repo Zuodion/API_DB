@@ -32,6 +32,7 @@
     "jsonwebtoken": "^8.3.0",
     "lodash": "^4.17.10",
     "mongoose": "^5.2.7",
+    "request": "^2.88.0",
     "telegram-checking-authorization": "^1.0.0",
     "winston": "^2.4.0",
     "winston-mongodb": "^3.0.0"
