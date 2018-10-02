@@ -6,8 +6,8 @@ const rentals = require('../routes/rentals');
 const users = require('../routes/users');
 const auth = require('../authenticaton/auth');
 const errorHandling = require('../middleware/errorHandling');
-const googleAuth = require('../middleware/googleAuth');
-const telegramAuth = require('../routes/telegramAuth')
+const googleAuth = require('../authenticaton/googleAuth');
+const telegramAuth = require('../authenticaton/telegramAuth')
 
 function routes(app) {//app - то что функция берет с экспресса
   app.use(express.json());

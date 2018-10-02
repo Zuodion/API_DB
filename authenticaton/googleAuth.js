@@ -10,10 +10,11 @@ router.post('/', async (req, res) => {
   const token = req.body.id_token;
   let tokenInfo = `https://www.googleapis.com/oauth2/v3/tokeninfo?id_token=${token}`
   request(tokenInfo, function (error, response, body){
-    if (res.statusCode === 200) {
+    if (response.statusCode === 200) {
         console.log('Google token OK');
-    } else{
-    return console.log('Invalid Google token');
+    } else {
+      res.status(400).send(''Invalid Google token'')
+      return console.log('Invalid Google token');
     }
   });
 });
