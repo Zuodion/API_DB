@@ -9,11 +9,11 @@
           // app know the current login status of the person.
           // Full docs on the response object can be found in the documentation
           // for FB.getLoginStatus().
-
+          let fbtoken = response.accessToken;
           $.ajax({
           type: "POST",
           url: "https://vidly-zuodion.herokuapp.com/api/fbAuth",
-          data: JSON.stringify({response.accessToken}),
+          data: JSON.stringify({fbtoken}),
           dataType: "json",
           contentType: "application/json",
           success: function(data){
