@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const telegramCheckingAuthorization = require('telegram-checking-authorization');
 
+router.get('/', async (req, res) => {
+  res.send('lol')
+});
+
 router.post('/', (req, res) => {
   let token = "631428444:AAGB1Ot057LQ-tu-EgQ2BREgXw9m3_wfiuU";
   let data = JSON.parse(req.data);
